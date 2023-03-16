@@ -10,3 +10,11 @@ function handleCredentialResponse(res) {
     console.log("Image URL: " + data.picture);
     console.log("Email: " + data.email);
 }
+
+let btnLogout = document.querySelector(".g_id_signout");
+btnLogout.onclick = () => {
+    google.accounts.id.disableAutoSelect();
+    document.getElementById("g_id_onload").style.display = "block";
+    document.querySelector(".g_id_signin").style.display = "block";
+    document.querySelector(".g_id_signout").style.display = "none";
+};
