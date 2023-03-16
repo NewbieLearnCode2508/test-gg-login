@@ -1,3 +1,12 @@
 function handleCredentialResponse(res) {
-    console.log(res);
+    let data = jwt_decode(res.credential);
+    document.getElementById("g_id_onload").style.display = "none";
+    document.querySelector(".g_id_signin").style.display = "none";
+    document.querySelector(".g_id_signout").style.display = "block";
+    console.log("ID: " + data.sub);
+    console.log("Full Name: " + data.name);
+    console.log("Given Name: " + data.given_name);
+    console.log("Family Name: " + data.family_name);
+    console.log("Image URL: " + data.picture);
+    console.log("Email: " + data.email);
 }
